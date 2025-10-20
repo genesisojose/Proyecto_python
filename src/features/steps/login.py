@@ -1,13 +1,16 @@
+
+
 from behave import *
-from src.page.PageLogin import PageLongin
+from src.page.PageLogin import PageLogin
 
 use_step_matcher('parse')
 
-@given("user accesses the page")
-def verify_page(context):
-    context.longin = PageLongin(context.driver, context.wait)
-
-
+@given("the user navigates to the login page")
+def step_access_page(context):
+    """
+    Initializes the PageLogin object and stores it in the context.
+    """
+    context.login_page = PageLogin(context.driver, context.wait)
 
 
 
